@@ -1,0 +1,110 @@
+
+.home-container {
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.hero-section {
+  background-color: #F6F6F7;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #403E43;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: #8E9196;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.primary-button {
+  background-color: #403E43;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+  background-color: #2D2D2D;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: #403E43;
+  padding: 12px 24px;
+  border: 1px solid #403E43;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.secondary-button:hover {
+  background-color: #403E43;
+  color: white;
+}
+
+.featured-section {
+  padding: 64px 16px;
+  background-color: white;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #403E43;
+  text-align: center;
+  margin-bottom: 48px;
+  font-weight: bold;
+}
+
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
