@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import Button from "./Button";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -17,32 +18,28 @@ const Navbar = () => {
           Portrait Art Hub
         </Link>
         
-        <div className="navbar-search">
-          <input
-            type="text"
-            placeholder="SEARCH"
-            className="search-input"
-          />
-        </div>
-        
         <div className="navbar-links">
           <Link to="/" className={isActive("/")}>
             Home
           </Link>
           <Link to="/art-listing" className={isActive("/art-listing")}>
-            Art Listing
+            Gallery
           </Link>
           <Link to="/order-form" className={isActive("/order-form")}>
-            Order Form
+            Custom Orders
           </Link>
           <Link to="/about" className={isActive("/about")}>
-            About/Contact
+            About Me
           </Link>
         </div>
         
         <div className="navbar-auth">
-          <button className="login-button">Login</button>
-          <button className="signup-button">Sign Up</button>
+          <Link to="/login">
+            <Button variant="outline">Login</Button>
+          </Link>
+          <Link to="/signup">
+            <Button>Sign Up</Button>
+          </Link>
         </div>
       </div>
     </nav>
