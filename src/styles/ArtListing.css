@@ -1,0 +1,184 @@
+
+.art-listing-page {
+  padding: 40px 0 80px;
+}
+
+.art-listing-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: var(--color-charcoal);
+  margin-bottom: 16px;
+}
+
+.page-description {
+  font-size: 1.125rem;
+  color: var(--color-graphite);
+}
+
+/* Filters */
+.filter-container {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 20px;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.filter-button {
+  background: none;
+  border: 1px solid #eaeaea;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-button:hover {
+  background-color: #f5f5f5;
+  border-color: #d1d1d1;
+}
+
+.filter-button.active {
+  background-color: var(--color-charcoal);
+  color: white;
+  border-color: var(--color-charcoal);
+}
+
+/* Artwork Grid */
+.artwork-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.artwork-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.artwork-card:hover {
+  transform: translateY(-10px);
+}
+
+.artwork-image-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+.artwork-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.artwork-card:hover .artwork-image {
+  transform: scale(1.05);
+}
+
+.artwork-info {
+  padding: 20px;
+}
+
+.artwork-title {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: var(--color-charcoal);
+}
+
+.artwork-description {
+  color: var(--color-graphite);
+  margin-bottom: 10px;
+}
+
+.artwork-price {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--color-charcoal);
+  margin-bottom: 16px;
+}
+
+.artwork-order-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--color-charcoal);
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.artwork-order-button:hover {
+  background-color: var(--color-graphite);
+  color: white;
+}
+
+/* Call to action */
+.art-listing-cta {
+  margin-top: 80px;
+  text-align: center;
+  background-color: var(--color-light-sketch);
+  padding: 60px 20px;
+  border-radius: 8px;
+}
+
+.cta-subtitle {
+  font-size: 1.75rem;
+  color: var(--color-charcoal);
+  margin-bottom: 16px;
+}
+
+.cta-text {
+  max-width: 600px;
+  margin: 0 auto 32px;
+  color: var(--color-graphite);
+  font-size: 1.125rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .artwork-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .cta-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .artwork-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .artwork-image-container {
+    height: 250px;
+  }
+}
