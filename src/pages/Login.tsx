@@ -2,7 +2,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
-import "../styles/Login.css";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -24,59 +27,63 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-card">
-        <div className="login-header">
-          <h2 className="login-title">Welcome Back</h2>
-          <p className="login-description">
+    <div className="flex items-center justify-center min-h-[80vh] px-4 py-12 bg-gray-50">
+      <Card className="w-full max-w-md shadow-lg">
+        <CardHeader className="space-y-2 text-center">
+          <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
+          <CardDescription>
             Log in to your account to continue
-          </p>
-        </div>
+          </CardDescription>
+        </CardHeader>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email" className="form-label">Email</label>
-            <input
-              id="email"
-              type="email"
-              className="form-input"
-              placeholder="you@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <div className="password-header">
-              <label htmlFor="password" className="form-label">Password</label>
-              <Link to="#" className="forgot-password">
-                Forgot password?
-              </Link>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="border-gray-300 focus:border-art-charcoal focus:ring-art-charcoal"
+              />
             </div>
-            <input
-              id="password"
-              type="password"
-              className="form-input"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button 
-            type="submit" 
-            className="login-button"
-            disabled={isLoading}
-          >
-            {isLoading ? "Logging in..." : "Login"}
-          </button>
-          <p className="signup-text">
-            Don't have an account?{" "}
-            <Link to="/signup" className="signup-link">
-              Sign up
-            </Link>
-          </p>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <Label htmlFor="password">Password</Label>
+                <Link to="#" className="text-sm text-art-charcoal hover:underline">
+                  Forgot password?
+                </Link>
+              </div>
+              <Input
+                id="password"
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="border-gray-300 focus:border-art-charcoal focus:ring-art-charcoal"
+              />
+            </div>
+          </CardContent>
+          <CardFooter className="flex flex-col space-y-4">
+            <Button 
+              type="submit" 
+              className="w-full bg-art-charcoal hover:bg-art-graphite" 
+              disabled={isLoading}
+            >
+              {isLoading ? "Logging in..." : "Login"}
+            </Button>
+            <p className="text-sm text-center text-gray-600">
+              Don't have an account?{" "}
+              <Link to="/signup" className="text-art-charcoal hover:underline font-medium">
+                Sign up
+              </Link>
+            </p>
+          </CardFooter>
         </form>
-      </div>
+      </Card>
     </div>
   );
 };
